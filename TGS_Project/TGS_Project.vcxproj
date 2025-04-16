@@ -145,23 +145,35 @@
       <CreateHotpatchableImage Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</CreateHotpatchableImage>
       <CreateHotpatchableImage Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</CreateHotpatchableImage>
     </ClCompile>
-    <ClCompile Include="Scene\InGame.cpp" />
-    <ClCompile Include="Scene\TitleScene.cpp" />
-    <ClCompile Include="Scene\Help.cpp" />
-    <ClCompile Include="Scene\End.cpp" />
-    <ClCompile Include="Scene\Result.cpp" />
-    <ClCompile Include="Scene\SceneManager.cpp" />
+    <ClCompile Include="Object\Castle\Castle.cpp" />
+    <ClCompile Include="Object\Enemy\Enemy.cpp" />
+    <ClCompile Include="Object\GameObjectManager.cpp" />
+    <ClCompile Include="Object\Player\Player.cpp" />
+    <ClCompile Include="Utility\ResourceManager.cpp" />
+    <ClCompile Include="Scene\GameMain\InGame.cpp" />
+    <ClCompile Include="Scene\GameSub\Title\TitleScene.cpp" />
+    <ClCompile Include="Scene\GameSub\Help\Help.cpp" />
+    <ClCompile Include="Scene\GameSub\End\End.cpp" />
+    <ClCompile Include="Scene\GameSub\Result\Result.cpp" />
+    <ClCompile Include="Scene\GameMain\SceneManager.cpp" />
     <ClCompile Include="Utility\InputControl.cpp" />
+    <ClCompile Include="Utility\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene\InGame.h" />
-    <ClInclude Include="Scene\TitleScene.h" />
-    <ClInclude Include="Scene\Help.h" />
-    <ClInclude Include="Scene\End.h" />
-    <ClInclude Include="Scene\Result.h" />
-    <ClInclude Include="Scene\SceneBase.h" />
-    <ClInclude Include="Scene\SceneManager.h" />
+    <ClInclude Include="Object\Castle\Castle.h" />
+    <ClInclude Include="Object\Enemy\Enemy.h" />
+    <ClInclude Include="Object\GameObjectManager.h" />
+    <ClInclude Include="Object\Player\Player.h" />
+    <ClInclude Include="Utility\ResourceManager.h" />
+    <ClInclude Include="Scene\GameMain\InGame.h" />
+    <ClInclude Include="Scene\GameSub\Title\TitleScene.h" />
+    <ClInclude Include="Scene\GameSub\Help\Help.h" />
+    <ClInclude Include="Scene\GameSub\End\End.h" />
+    <ClInclude Include="Scene\GameSub\Result\Result.h" />
+    <ClInclude Include="Scene\GameMain\SceneBase.h" />
+    <ClInclude Include="Scene\GameMain\SceneManager.h" />
     <ClInclude Include="Utility\InputControl.h" />
+    <ClInclude Include="Utility\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

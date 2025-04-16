@@ -1,5 +1,5 @@
 #include"DxLib.h"
-#include"Scene/SceneManager.h"
+#include"Scene/GameMain/SceneManager.h"
 
 //メイン関数（プログラムスタート位置）
 int WINAPI WinMain(
