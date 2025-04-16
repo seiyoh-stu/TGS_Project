@@ -35,3 +35,10 @@ TGS_Project/.vs/TGS_Project/FileContentIndex/fd3f85e7-8d42-48fb-9c07-5abfbef3b48
 *.log
 *.tlog
 *.pdb
+
+/vsidx
+/json
+/ipch
+/log
+/tlog
+/pdb
