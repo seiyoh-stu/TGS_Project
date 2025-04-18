@@ -1,19 +1,18 @@
 #pragma once
-class Player
+
+class Bullet 
 {
 public:
-	Player();
-	~Player();
-
+	Bullet();
+	~Bullet();
 	void Initialize();
 	void Update();
 	void Draw();
 	void Finalize();
-
 private:
-	void Movement();
-	void AnimeControl();
-	//void BulletControl();
+	/*void Angle();
+	float BulletSpeed(float bulletspeed);
+	void SetArrowPosition(float x, float y);*/
 
 	int pos_x_;
 	int pos_y_;

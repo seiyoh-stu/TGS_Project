@@ -2,6 +2,7 @@
 
 #include "SceneBase.h"
 #include "../../Object/Player/Player.h"
+#include "../../Object/Bullet/Bullet.h"
 #include "../../Object/Enemy/Enemy.h"
 #include "../../Utility/Vector2D.h"
 #include <memory> // std::unique_ptr を使用するため
@@ -9,7 +10,8 @@
 class InGame : public SceneBase
 {
 private:
-    std::unique_ptr<Player> player_; // Playerクラスのインスタンスをスマートポインタで管理
+    std::unique_ptr<Player> player; // Playerクラスのインスタンスをスマートポインタで管理
+	std::unique_ptr<Bullet> bullet; // Bulletクラスのインスタンスをスマートポインタで管理
     // 他のプライベートメンバ変数
 
 public:
@@ -33,5 +35,6 @@ public:
     virtual eSceneType GetNowSceneType() const override;
 
     // Playerクラスのインスタンスへのアクセス (必要であれば)
-    Player* GetPlayer() const { return player_.get(); }
+    Player* GetPlayer() const { return player.get(); }
+    Bullet* GetBullet() const { return bullet.get(); }
 };

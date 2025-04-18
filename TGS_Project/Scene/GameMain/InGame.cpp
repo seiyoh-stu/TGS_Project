@@ -1,11 +1,13 @@
 ﻿#include"InGame.h"
 #include"../../Utility/InputControl.h"
 #include"../../Object/Player/Player.h"
+#include "../../Object/Bullet/Bullet.h"
 #include"DxLib.h"
 #include <memory> // std::make_unique を使用するため
 
 InGame::InGame() :
-    player_(std::make_unique<Player>()) // コンストラクタで Player のインスタンスを生成
+    player(std::make_unique<Player>()) // コンストラクタで Player のインスタンスを生成
+	, bullet(std::make_unique<Bullet>()) // コンストラクタで Bullet のインスタンスを生成
 {
 
 }
@@ -17,7 +19,8 @@ InGame::~InGame()
 
 void InGame::Initialize()
 {
-    player_->Initialize();
+    player->Initialize();
+    
 }
 
 eSceneType InGame::Update()
@@ -31,19 +34,22 @@ eSceneType InGame::Update()
         return eSceneType::eResult;
     }
 
-    player_->Update();
+    player->Update();
+	bullet->Update();
 
     return GetNowSceneType();
 }
 void InGame::Draw() const
 {
     DrawFormatString(10, 10, GetColor(255, 255, 255), "ゲーム中です");
-    player_->Draw();
+    player->Draw();
+    bullet->Draw();
+
 }
 
 void InGame::Finalize()
 {
-    player_->Finalize();
+    player->Finalize();
 }
 
 eSceneType InGame::GetNowSceneType() const
