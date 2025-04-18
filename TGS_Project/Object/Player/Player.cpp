@@ -1,4 +1,7 @@
 #include "Player.h"
+#include<cmath>
+#include"DxLib.h"
+#include"../../Utility/ResourceManager.h"
 #include"../../Utility/InputControl.h"
 #include"DxLib.h"
 
@@ -17,6 +20,8 @@ Player::~Player()
 }
 void Player::Initialize()
 {
+	ResourceManager* rm = ResourceManager::GetInstance();
+
 
 }
 
@@ -57,5 +62,15 @@ void Player::Movement()
 
 void Player::AnimeControl()
 {
-	// アニメーションに関する処理を記述 (今回は空)
+	
+}
+
+Vector2D& Player::GetLocation()
+{
+	return location;
+}
+
+int Player::GetImage() const
+{
+	return player_image_;
 }

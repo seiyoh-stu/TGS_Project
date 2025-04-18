@@ -10,11 +10,17 @@ class InGame : public SceneBase
 {
 private:
     std::unique_ptr<Player> player_; // Playerクラスのインスタンスをスマートポインタで管理
-    // 他のプライベートメンバ変数
+    
 
 public:
     InGame();
     virtual ~InGame();
+
+    int stage_image;
+    float scroll = 0.0f;             // スクロール量
+    float scroll_speed = 4.0f;       // スクロール速度（必要に応じて調整）
+    int screen_width = 640;          // 画面幅
+    int stage_width = 2000;          // ステージ画像の横幅
 
     // 初期化処理
     virtual void Initialize() override;
@@ -33,5 +39,6 @@ public:
     virtual eSceneType GetNowSceneType() const override;
 
     // Playerクラスのインスタンスへのアクセス (必要であれば)
-    Player* GetPlayer() const { return player_.get(); }
+    Player* GetPlayer() const { return player_.get(); };
+    Vector2D generate_location;
 };
