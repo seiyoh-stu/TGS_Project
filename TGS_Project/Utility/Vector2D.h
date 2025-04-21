@@ -7,7 +7,6 @@ public:
 	float x;//X座標
 	float y;//Y座標
 
-
 public:
 
 	//コンストラクタ
