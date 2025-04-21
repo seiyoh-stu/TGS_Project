@@ -3,15 +3,13 @@
 #include"../../Utility/Vector2D.h"
 #include"../../Utility/ResourceManager.h"
 #include"../../Object/Player/Player.h"
+#include "../../Object/Bullet/Bullet.h"
 #include"DxLib.h"
 #include <memory> // std::make_unique を使用するため
 
 InGame::InGame() :
-<<<<<<< HEAD
-     player_(std::make_unique<Player>())
-=======
-     player(std::make_unique<Player>())
->>>>>>> seiyo
+     player(std::make_unique<Player>()),
+    bullet(std::make_unique<Bullet>())
 {
 
 }
@@ -24,11 +22,8 @@ InGame::~InGame()
 //初期化処理
 void InGame::Initialize()
 {
-<<<<<<< HEAD
-    player_->Initialize();
-=======
     player->Initialize();
->>>>>>> seiyo
+    bullet->Initialize();
 
 	//// 背景画像の読み込み   
     ResourceManager* rm = ResourceManager::GetInstance();
@@ -46,11 +41,8 @@ eSceneType InGame::Update()
         return eSceneType::eResult;
     }
 
-<<<<<<< HEAD
-    player_->Update();
-=======
     player->Update();
->>>>>>> seiyo
+    bullet->Update();
 
     // プレイヤーの位置取得
     Vector2D player_pos = player->GetLocation();
@@ -83,12 +75,7 @@ void InGame::Draw() const
 
 void InGame::Finalize()
 {
-<<<<<<< HEAD
-    player_->Finalize();
-=======
     player->Finalize();
->>>>>>> seiyo
-
 }
 
 eSceneType InGame::GetNowSceneType() const
