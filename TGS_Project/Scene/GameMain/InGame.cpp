@@ -7,8 +7,11 @@
 #include <memory> // std::make_unique を使用するため
 
 InGame::InGame() :
+<<<<<<< HEAD
      player_(std::make_unique<Player>())
+=======
      player(std::make_unique<Player>())
+>>>>>>> seiyo
 {
 
 }
@@ -21,8 +24,11 @@ InGame::~InGame()
 //初期化処理
 void InGame::Initialize()
 {
+<<<<<<< HEAD
     player_->Initialize();
+=======
     player->Initialize();
+>>>>>>> seiyo
 
 	//// 背景画像の読み込み   
     ResourceManager* rm = ResourceManager::GetInstance();
@@ -40,10 +46,13 @@ eSceneType InGame::Update()
         return eSceneType::eResult;
     }
 
+<<<<<<< HEAD
     player_->Update();
+=======
+    player->Update();
+>>>>>>> seiyo
 
     // プレイヤーの位置取得
-    Vector2D player_pos = player_->GetLocation();
     Vector2D player_pos = player->GetLocation();
 
     // プレイヤーが画面中央より右に行ったらスクロール
@@ -65,8 +74,6 @@ void InGame::Draw() const
     DrawGraph(-static_cast<int>(scroll), 0, stage_image, TRUE);
 
     // プレイヤー描画（スクロール分オフセット）
-    Vector2D draw_pos = player_->GetLocation();
-    DrawGraph(static_cast<int>(draw_pos.x - scroll), static_cast<int>(draw_pos.y), player_->GetImage(), TRUE);
     Vector2D draw_pos = player->GetLocation();
     DrawGraph(static_cast<int>(draw_pos.x - scroll), static_cast<int>(draw_pos.y), player->GetImage(), TRUE);
 
@@ -76,7 +83,11 @@ void InGame::Draw() const
 
 void InGame::Finalize()
 {
+<<<<<<< HEAD
     player_->Finalize();
+=======
+    player->Finalize();
+>>>>>>> seiyo
 
 }
 

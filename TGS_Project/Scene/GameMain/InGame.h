@@ -11,6 +11,7 @@ class InGame : public SceneBase
 {
 private:
 <<<<<<< HEAD
+<<<<<<< HEAD
     std::unique_ptr<Player> player_; // Playerクラスのインスタンスをスマートポインタで管理
     
 =======
@@ -18,8 +19,11 @@ private:
 	std::unique_ptr<Bullet> bullet; // Bulletクラスのインスタンスをスマートポインタで管理
     // 他のプライベートメンバ変数
 >>>>>>> seiyo
+=======
     std::unique_ptr<Player> player; // Playerクラスのインスタンスをスマートポインタで管理
     std::unique_ptr<Bullet> bullet;
+    
+>>>>>>> seiyo
 
 public:
     InGame();
@@ -49,10 +53,16 @@ public:
 
     // Playerクラスのインスタンスへのアクセス (必要であれば)
 <<<<<<< HEAD
+<<<<<<< HEAD
     Player* GetPlayer() const { return player_.get(); };
     Vector2D generate_location;
 =======
     Player* GetPlayer() const { return player.get(); }
     Bullet* GetBullet() const { return bullet.get(); }
+>>>>>>> seiyo
+=======
+    Player* GetPlayer() const { return player.get(); };
+    Bullet* GetBullet() const { return bullet.get(); };
+    Vector2D generate_location;
 >>>>>>> seiyo
 };
