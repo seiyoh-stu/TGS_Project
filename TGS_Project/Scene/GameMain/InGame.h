@@ -18,6 +18,8 @@ private:
 	std::unique_ptr<Bullet> bullet; // Bulletクラスのインスタンスをスマートポインタで管理
     // 他のプライベートメンバ変数
 >>>>>>> seiyo
+    std::unique_ptr<Player> player; // Playerクラスのインスタンスをスマートポインタで管理
+    std::unique_ptr<Bullet> bullet;
 
 public:
     InGame();

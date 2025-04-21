@@ -8,6 +8,7 @@
 
 InGame::InGame() :
      player_(std::make_unique<Player>())
+     player(std::make_unique<Player>())
 {
 
 }
@@ -21,6 +22,7 @@ InGame::~InGame()
 void InGame::Initialize()
 {
     player_->Initialize();
+    player->Initialize();
 
 	//// 背景画像の読み込み   
     ResourceManager* rm = ResourceManager::GetInstance();
@@ -42,6 +44,7 @@ eSceneType InGame::Update()
 
     // プレイヤーの位置取得
     Vector2D player_pos = player_->GetLocation();
+    Vector2D player_pos = player->GetLocation();
 
     // プレイヤーが画面中央より右に行ったらスクロール
     if (player_pos.x > scroll + screen_width / 2)
@@ -64,6 +67,8 @@ void InGame::Draw() const
     // プレイヤー描画（スクロール分オフセット）
     Vector2D draw_pos = player_->GetLocation();
     DrawGraph(static_cast<int>(draw_pos.x - scroll), static_cast<int>(draw_pos.y), player_->GetImage(), TRUE);
+    Vector2D draw_pos = player->GetLocation();
+    DrawGraph(static_cast<int>(draw_pos.x - scroll), static_cast<int>(draw_pos.y), player->GetImage(), TRUE);
 
     DrawFormatString(10, 10, GetColor(255, 255, 255), "ゲーム中", scroll);
 }
