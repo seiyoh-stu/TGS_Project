@@ -13,6 +13,7 @@ private:
 	/*void Angle();
 	float BulletSpeed(float bulletspeed);
 	void SetArrowPosition(float x, float y);*/
+	void GetBullet();
 
 	int pos_x_;
 	int pos_y_;

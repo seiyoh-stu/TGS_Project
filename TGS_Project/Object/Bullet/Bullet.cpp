@@ -55,6 +55,11 @@ void Bullet::Finalize()
 {
 }
 
+void Bullet::GetBullet()
+{
+
+}
+
 //void Bullet::Angle()
 //{
 //	// Šp“x‚ðŽæ“¾
